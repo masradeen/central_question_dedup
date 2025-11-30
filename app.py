@@ -35,7 +35,10 @@ run_button = st.sidebar.button("🚀 Run Deduplication")
 
 # Process jika file ada
 if uploaded_file:
-    df = pd.read_csv(uploaded_file)
+    df = pd.read_csv(
+        uploaded_file,
+        sep=";",
+        encoding="utf-8-sig")
 
     st.write("### 📝 Preview Pertanyaan")
     st.dataframe(df.head())
