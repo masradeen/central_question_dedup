@@ -1,0 +1,16 @@
+id1,id2,survey1,survey2,question1,question2,similarity
+Q001,Q002,Susenas,Sakernas Statistik Tenaga Kerja,Apa penghasilan utama rumah tangga Anda?,Berapa pendapatan utama keluarga Anda?,0.8415600657463074
+Q003,Q004,Susenas,SUSENAS,Berapa total pengeluaran rumah tangga bulan lalu?,Berapa pengeluaran konsumsi rumah tangga per bulan?,0.8753171563148499
+Q003,Q039,Susenas,SE,Berapa total pengeluaran rumah tangga bulan lalu?,Berapa pendapatan usaha Anda bulan lalu?,0.7996203899383545
+Q005,Q006,Susenas,Podes,Berapa jumlah anggota rumah tangga Anda?,Berapa orang yang tinggal dalam rumah ini?,0.7918978333473206
+Q009,Q010,Sakernas,Sakernas,Apakah Anda bekerja minggu lalu?,Apa status pekerjaan Anda minggu lalu?,0.8716312050819397
+Q009,Q047,Sakernas,Sakernas,Apakah Anda bekerja minggu lalu?,Berapa jam kerja Anda minggu lalu?,0.8288289308547974
+Q010,Q047,Sakernas,Sakernas,Apa status pekerjaan Anda minggu lalu?,Berapa jam kerja Anda minggu lalu?,0.8308243155479431
+Q011,Q012,SP2KP,SP2KP,Seberapa sering Anda membeli beras?,Berapa kilogram beras yang Anda beli tiap bulan?,0.8519880175590515
+Q013,Q014,Susenas,Podes,Apa jenis bahan bakar untuk memasak?,Bahan bakar apa yang digunakan untuk memasak?,0.9252223968505859
+Q017,Q018,Podes,Susenas,Apakah rumah ini menggunakan listrik?,Apakah rumah Anda memiliki akses listrik?,0.7888013124465942
+Q021,Q022,Sakernas,Sakernas,Berapa lama perjalanan Anda ke tempat kerja?,Berapa menit waktu yang Anda butuhkan untuk tiba di tempat kerja?,0.8677411079406738
+Q027,Q028,Susenas Kesehatan,Susenas Kesehatan,Apakah Anda mengalami gangguan kesehatan bulan lalu?,Apakah Anda sakit dalam 1 bulan terakhir?,0.834686815738678
+Q031,Q032,Susenas,Podes,Apa sumber air minum utama rumah tangga?,Sumber air minum yang digunakan keluarga ini apa?,0.8237941861152649
+Q037,Q038,Sakernas,Susenas,Apa jenis pekerjaan utama Anda?,Pekerjaan utama Anda apa?,0.9655581712722778
+Q047,Q048,Sakernas,Sakernas,Berapa jam kerja Anda minggu lalu?,Total jam kerja selama seminggu berapa?,0.8137925863265991

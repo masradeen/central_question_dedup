@@ -1,0 +1,51 @@
+question_id;question_text;survey_name;directorate
+Q001;Apa penghasilan utama rumah tangga Anda?;Susenas;Statistik Sosial
+Q002;Berapa pendapatan utama keluarga Anda?;Sakernas Statistik Tenaga Kerja
+Q003;Berapa total pengeluaran rumah tangga bulan lalu?;Susenas;Statistik Sosial
+Q004;Berapa pengeluaran konsumsi rumah tangga per bulan?;SUSENAS;Statistik Sosial
+Q005;Berapa jumlah anggota rumah tangga Anda?;Susenas;Statistik Sosial
+Q006;Berapa orang yang tinggal dalam rumah ini?;Podes;Statistik Pemerintahan
+Q007;Apa jenis lantai utama rumah ini?;Susenas;Statistik Sosial
+Q008;Lantai rumah terbuat dari bahan apa?;Podes;Statistik Pemerintahan
+Q009;Apakah Anda bekerja minggu lalu?;Sakernas;Statistik Tenaga Kerja
+Q010;Apa status pekerjaan Anda minggu lalu?;Sakernas;Statistik Tenaga Kerja
+Q011;Seberapa sering Anda membeli beras?;SP2KP;Statistik Harga
+Q012;Berapa kilogram beras yang Anda beli tiap bulan?;SP2KP;Statistik Harga
+Q013;Apa jenis bahan bakar untuk memasak?;Susenas;Statistik Sosial
+Q014;Bahan bakar apa yang digunakan untuk memasak?;Podes;Statistik Pemerintahan
+Q015;Apa pendidikan terakhir yang ditamatkan?;Susenas;Statistik Sosial
+Q016;Pendidikan tertinggi yang pernah Anda selesaikan?;Sakernas;Statistik Tenaga Kerja
+Q017;Apakah rumah ini menggunakan listrik?;Podes;Statistik Pemerintahan
+Q018;Apakah rumah Anda memiliki akses listrik?;Susenas;Statistik Sosial
+Q019;Siapa yang membiayai pendidikan anak Anda?;Susenas;Statistik Sosial
+Q020;Sumber biaya pendidikan anak berasal dari mana?;Susenas Modul;Statistik Sosial
+Q021;Berapa lama perjalanan Anda ke tempat kerja?;Sakernas;Statistik Tenaga Kerja
+Q022;Berapa menit waktu yang Anda butuhkan untuk tiba di tempat kerja?;Sakernas;Statistik Tenaga Kerja
+Q023;Apakah Anda memiliki usaha sendiri?;Sensus Ekonomi;Statistik Produksi
+Q024;Apakah rumah tangga ini menjalankan usaha?;Podes;Statistik Pemerintahan
+Q025;Apakah Anda menggunakan internet minggu lalu?;Susenas TIK;Statistik Sosial
+Q026;Seberapa sering Anda mengakses internet?;Susenas TIK;Statistik Sosial
+Q027;Apakah Anda mengalami gangguan kesehatan bulan lalu?;Susenas Kesehatan;Statistik Sosial
+Q028;Apakah Anda sakit dalam 1 bulan terakhir?;Susenas Kesehatan;Statistik Sosial
+Q029;Apa jenis transportasi utama ke sekolah?;Susenas Pendidikan;Statistik Sosial
+Q030;Bagaimana anak pergi ke sekolah?;Susenas Pendidikan;Statistik Sosial
+Q031;Apa sumber air minum utama rumah tangga?;Susenas;Statistik Sosial
+Q032;Sumber air minum yang digunakan keluarga ini apa?;Podes;Statistik Pemerintahan
+Q033;Berapa total usaha mikro di desa ini?;Podes;Statistik Pemerintahan
+Q034;Berapa jumlah UMKM yang beroperasi di desa?;Podes;Statistik Pemerintahan
+Q035;Apakah Anda menerima bantuan sosial?;Susenas;Statistik Sosial
+Q036;Apakah rumah tangga ini menerima bansos?;Podes;Statistik Pemerintahan
+Q037;Apa jenis pekerjaan utama Anda?;Sakernas;Statistik Tenaga Kerja
+Q038;Pekerjaan utama Anda apa?;Susenas;Statistik Sosial
+Q039;Berapa pendapatan usaha Anda bulan lalu?;SE;Statistik Produksi
+Q040;Omset usaha bulan terakhir berapa?;SE;Statistik Produksi
+Q041;Apa jenis atap rumah ini?;Podes;Statistik Pemerintahan
+Q042;Bahan apa yang digunakan untuk atap rumah?;Susenas;Statistik Sosial
+Q043;Apakah rumah memiliki jamban?;Podes;Statistik Pemerintahan
+Q044;Apakah rumah tangga memiliki fasilitas sanitasi?;Susenas;Statistik Sosial
+Q045;Apa kendaraan utama menuju tempat kerja?;Sakernas;Statistik Tenaga Kerja
+Q046;Kendaraan apa yang biasanya Anda pakai ke kantor?;Sakernas;Statistik Tenaga Kerja
+Q047;Berapa jam kerja Anda minggu lalu?;Sakernas;Statistik Tenaga Kerja
+Q048;Total jam kerja selama seminggu berapa?;Sakernas;Statistik Tenaga Kerja
+Q049;Apakah usaha Anda memiliki izin usaha?;SE;Statistik Produksi
+Q050;Apakah usaha ini terdaftar secara resmi?;SE;Statistik Produksi
