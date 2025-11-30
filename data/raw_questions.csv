@@ -1,6 +1,6 @@
 question_id;question_text;survey_name;directorate
 Q001;Apa penghasilan utama rumah tangga Anda?;Susenas;Statistik Sosial
-Q002;Berapa pendapatan utama keluarga Anda?;Sakernas Statistik Tenaga Kerja
+Q002;Berapa pendapatan utama keluarga Anda?;Sakernas;Statistik Tenaga Kerja
 Q003;Berapa total pengeluaran rumah tangga bulan lalu?;Susenas;Statistik Sosial
 Q004;Berapa pengeluaran konsumsi rumah tangga per bulan?;SUSENAS;Statistik Sosial
 Q005;Berapa jumlah anggota rumah tangga Anda?;Susenas;Statistik Sosial
