@@ -6,3 +6,5 @@ matplotlib
 seaborn
 faiss-cpu
 tqdm
+streamlit
+networkx
