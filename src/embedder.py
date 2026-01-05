@@ -26,6 +26,7 @@ class QuestionEmbedder:
             sentences,
             batch_size=batch_size,
             convert_to_numpy=True,
+            normalize_embeddings=True,
             show_progress_bar=show_progress
         )
         return embeddings

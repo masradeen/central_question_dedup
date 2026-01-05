@@ -23,7 +23,9 @@ from src.embedder import QuestionEmbedder
 # CONFIG
 # -------------------------------------------------------
 DATA_PATH = "data/raw_questions.csv"
+# DATA_PATH = "data/perturbations.csv"
 EMB_PATH = "results/embeddings.npy"
+# EMB_PATH = "results/perturbed_embeddings.npy"
 PAIR_PATH = "results/similarity_pairs.csv"
 CLUSTER_PATH = "results/clusters.json"
 HEATMAP_PATH = "results/heatmap.png"
@@ -40,9 +42,10 @@ def load_questions():
     df = pd.read_csv(
         DATA_PATH, 
         sep=";",
-        encoding="utf-8-sig")
-    if "question_text" not in df.columns:
-        raise ValueError("raw_questions.csv must have column: question_text")
+        encoding="utf-8-sig"
+        )
+    # if "question_text" not in df.columns:
+    #     raise ValueError("raw_questions.csv must have column: question_text")
     return df
 
 
@@ -51,6 +54,7 @@ def load_questions():
 # -------------------------------------------------------
 def generate_embeddings(df):
     embedder = QuestionEmbedder()
+    # emb = embedder.encode(df["perturbed"].tolist())
     emb = embedder.encode(df["question_text"].tolist())
     return emb
 

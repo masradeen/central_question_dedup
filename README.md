@@ -1,203 +1,102 @@
-# BPS Question Deduplication System
+# Central Question Deduplication System
 
-### Semantic Similarity & Cross‑Survey Redundancy Detection
+## Overview
 
-### Statistics Indonesia (BPS)
+This repository implements a semantic deduplication pipeline for large-scale survey question repositories, developed in the context of national statistical systems at Statistics Indonesia (BPS). The system aims to identify semantically redundant or highly similar survey questions across different survey instruments and organizational units, supporting metadata harmonization and reducing redundancy in official statistics.
 
----
+Large statistical organizations often face duplication of survey questions due to independent survey design processes across directorates. This project addresses that issue using embedding-based semantic similarity methods combined with scalable retrieval and clustering techniques.
 
-## 📌 Overview
+## Problem Motivation
 
-BPS menjalankan **puluhan survei nasional** setiap tahun melalui berbagai direktorat.  
-Masalah yang muncul:
+Managing survey question repositories at scale involves several challenges:
 
-- Banyak **pertanyaan survei berbeda namun menanyakan hal yang sama**.
-- Redundansi antar direktorat → beban responden tinggi.
-- Ketidakharmonisan metadata → sulit integrasi data lintas survei.
+- Large volumes of textual questions across heterogeneous surveys
+- Semantic overlap expressed through different wording or structures
+- Instability of similarity thresholds in high-dimensional embedding spaces
+- Noise in sentence embeddings affecting similarity graph construction
 
-Repository ini menyediakan **sistem otomatis** untuk:
+These challenges motivate the use of robust semantic representations and efficient similarity search algorithms.
 
-1. Menemukan pertanyaan yang duplikat antar survei.
-2. Menghitung kemiripan semantik antar pertanyaan.
-3. Mengelompokkan pertanyaan-pertanyaan mirip dalam _clusters_.
-4. Menyediakan output siap evaluasi untuk unit statistik tematik di BPS.
+## Methodology
 
-Sistem ini dirancang menggunakan pendekatan **state‑of‑the‑art NLP**  
-(`sentence-transformers`, kNN, cosine similarity, connected-components clustering).
+The deduplication pipeline consists of the following stages:
 
----
+1. Text preprocessing and normalization of survey questions
+2. Sentence embedding generation using sentence-transformer models
+3. Approximate nearest neighbor search for efficient similarity retrieval
+4. Similarity graph construction based on cosine similarity thresholds
+5. Graph-based clustering to identify redundant or highly similar questions
 
-## 🚀 Features
+## Repository Structure
 
-### ✅ Semantic Embedding
-
-Menggunakan Sentence Transformers (MiniLM, multilingual models).
-
-### ✅ kNN Candidate Retrieval
-
-Mengambil kandidat tetangga terdekat tanpa menghitung semua kombinasi.
-
-### ✅ Cosine Similarity
-
-Skor kemiripan 0–1.
-
-### ✅ Duplicate Pair Detection
-
-Default threshold:
-
-```
-similarity ≥ 0.78
-```
-
-### ✅ Graph-Based Clustering
-
-Mengelompokkan pertanyaan yang mirip ke dalam cluster.
-
-### ✅ Visual Analytics
-
-- similarity matrix heatmap
-- CSV hasil pasangan mirip
-- JSON cluster hasil grouping
-
----
-
-## 📂 Repository Structure
-
-```
 central_question_dedup/
-│
-├── data/
-│   └── raw_questions.csv
-│
-├── results/
-│   ├── embeddings.npy
-│   ├── similarity_pairs.csv
-│   ├── heatmap.png
-│   └── clusters.json
-│
-├── src/
-│   ├── embedder.py
-│   ├── dedup_engine.py
-│   └── clustering.py
-│
-├── main.py
-├── requirements.txt
+├── data/ # Input survey question data
+├── notebooks/ # Exploratory analysis and experiments
+├── results/ # Embeddings, similarity outputs, and visualizations
+├── src/ # Core pipeline modules
+├── main.py # Pipeline entry point
+├── requirements.txt # Python dependencies
 └── README.md
-```
 
----
+## Installation
 
-## 📦 Installation
-
-```
+Ensure Python 3.8 or later is installed, then install dependencies:
+s
 pip install -r requirements.txt
-```
 
----
+## Usage
 
-## 🏃 How to Run
+Run the full deduplication pipeline:
+python main.py
 
-### 🔥 Jalankan pipeline lengkap
+Depending on configuration, the pipeline performs embedding generation, similarity search, and clustering sequentially.
 
-```
-python main.py --mode all
-```
+## Input Format
 
-### 🧩 Jalankan dedup-only
+The expected input is a CSV file containing survey questions and metadata:
 
-```
-python main.py --mode dedup
-```
+question_id,question_text,survey_name,directorate
 
-### 🧮 Jalankan cluster-only
+Example:
 
-```
-python main.py --mode cluster
-```
+Q001,"Apa penghasilan utama rumah tangga Anda?",Susenas,Statistik Sosial
+Q245,"Berapa pendapatan utama keluarga Anda?",Sakernas,Statistik Ketenagakerjaan
 
----
+## Output
 
-## 📄 Input Format (raw_questions.csv)
+The pipeline produces:
 
-| question_id | question_text | survey_name | directorate |
-| ----------- | ------------- | ----------- | ----------- |
+- Pairwise similarity results between survey questions
+- Clusters of semantically similar or redundant questions
+- Optional visualizations such as similarity heatmaps
 
-Contoh:
+## Research Contribution
 
-```
-Q001,"Apa penghasilan utama rumah tangga Anda?",Susenas,Direktorat Statistik Sosial
-Q502,"Berapa pendapatan utama keluarga Anda?",Sakernas,Direktorat Tenaga Kerja
-```
+This project contributes to applied and methodological research in:
 
----
+- Semantic similarity and deduplication for official statistics
+- Scalable similarity graph construction for large text collections
+- Empirical analysis of embedding noise and threshold sensitivity
+- Metadata harmonization across distributed survey systems
+  Observed instability due to noisy embeddings and threshold selection motivates further investigation into optimization-based and theoretically grounded approaches for large-scale semantic deduplication.
 
-## 📤 Outputs
+## Limitations and Future Work
 
-### 1️⃣ similarity_pairs.csv
+Planned extensions include:
 
-Pasangan pertanyaan mirip (≥ threshold).
+- Improved robustness to threshold sensitivity
+- Support for multilingual survey question repositories
+- Hierarchical and structured question similarity modeling
+- Integration with distributed or federated similarity computation frameworks
 
-### 2️⃣ heatmap.png
+## Author
 
-Visualisasi similarity matrix.
-
-### 3️⃣ clusters.json
-
-Contoh:
-
-```json
-{
-  "clusters": [
-    ["Q001", "Q502", "Q722"],
-    ["Q018", "Q019"]
-  ]
-}
-```
-
----
-
-## 🧠 Why This Matters for BPS
-
-Sistem ini membantu:
-
-- harmonisasi metadata antar direktorat
-- mengurangi duplikasi pertanyaan antar survei
-- menurunkan _respondent burden_
-- meningkatkan _statistical coherence_
-- rekomendasi penggabungan survei
-
-Dapat dikembangkan menjadi:
-
-- survey harmonization engine
-- metadata knowledge graph
-- inter-survey alignment recommender
-
----
-
-## 🏛️ Research Contribution
-
-Repository ini dapat digunakan untuk riset:
-
-- Semantic Matching for Large‑Scale National Surveys
-- Optimization for Cross‑Survey Metadata Harmonization
-- Automatic Redundancy Detection in Official Statistics
-
-Cocok sebagai material aplikasi **MS/PhD KAUST**.
-
----
-
-## 🔧 Potential Extensions
-
-- Multilingual models
-- Hierarchical clustering
-- Integrasi ke Metadata Warehouse
-- Thematic grouping per direktorat
-
----
-
-## 🙌 Credits
-
-Developed by:  
-**Sigit Nugroho Putra**  
-Statistics Indonesia (BPS) — ICT & Statistical Computing  
+Sigit Nugroho Putra
+Statistics Indonesia (BPS)
 2025
+
+## Citation
+
+If you use or reference this repository, please cite:
+Putra, S. N. (2025). Central Question Deduplication System.
+GitHub repository: https://github.com/masradeen/central_question_dedup
